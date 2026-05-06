@@ -1,21 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Naveen's eCommerce Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaveenOptics | Premium Eyewear</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f1f3f6; }
-        .header { background-color: #2874f0; color: white; padding: 15px; text-align: center; }
-        .product-card { background: white; width: 200px; margin: 20px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .buy-btn { background: #ff9f00; border: none; color: white; padding: 10px; cursor: pointer; width: 100%; }
+        :root { --primary: #00bac6; --dark: #333333; --light: #f4f4f4; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); }
+        
+        /* Navbar */
+        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=1000'); 
+                height: 300px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+
+        /* Product Grid */
+        .container { padding: 2rem 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 180px; object-fit: contain; padding: 10px; background: #fafafa; }
+        .card-info { padding: 1.5rem; }
+        .tag { position: absolute; top: 10px; left: 10px; background: var(--primary); color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; }
+        .price { color: var(--primary); font-size: 1.2rem; font-weight: bold; }
+        .buy-btn { width: 100%; background: var(--dark); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .buy-btn:hover { background: #000; }
     </style>
 </head>
 <body>
-    <div class="header"><h1>Naveen's Flipkart Clone</h1></div>
-    <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product">
-        <h3>Cool Smartphone</h3>
-        <p>Price: $299</p>
-        <button class="buy-btn">Buy Now</button>
+
+<nav>
+    <div class="logo">NaveenOptics</div>
+    <div class="nav-links">
+        <a href="#">Computer Glasses</a>
+        <a href="#">Sunglasses</a>
+        <a href="#">Contact Lenses</a>
+        <a href="#">Cart (0)</a>
     </div>
+</nav>
+
+<div class="hero">
+    <div>
+        <h1>Upgrade Your Vision</h1>
+        <p>Buy 1 Get 1 Free on all Premium Frames</p>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Best Sellers</h2>
+    <div class="grid">
+        <!-- Item 1 -->
+        <div class="card">
+            <span class="tag">Bestseller</span>
+            <img src="https://static5.lenskart.com/media/catalog/product/cache/1/thumbnail/628x528/9df78eab33525d08d6e5fb8d27136e95/l/e/lenskart-air-la-e15431-full-rim-rectangle-brwn-tr-c2-eyegalsses_lenskart-air-la-e15431-full-rim-rectangle-brwn-tr-c2-eyegalsses_g_7831_21_july_23.jpg" alt="Frame">
+            <div class="card-info">
+                <h3>Vincent Chase Online</h3>
+                <p>Size: Medium • Air Light</p>
+                <div class="price">₹2,500</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="card">
+            <img src="https://static5.lenskart.com/media/catalog/product/cache/1/thumbnail/628x528/9df78eab33525d08d6e5fb8d27136e95/l/e/lenskart-air-la-e15418-c1-eyeglasses_g_2384_15_june_2023.jpg" alt="Frame">
+            <div class="card-info">
+                <h3>Lenskart Air Blue</h3>
+                <p>Size: Small • Rectangle</p>
+                <div class="price">₹1,999</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="card">
+            <span class="tag">New Arrival</span>
+            <img src="https://static5.lenskart.com/media/catalog/product/cache/1/thumbnail/628x528/9df78eab33525d08d6e5fb8d27136e95/v/i/vincent-chase-vc-e13045-full-rim-round-wayfarer-c1-eyegalsses_vincent-chase-vc-e13045-full-rim-round-wayfarer-c1-eyegalsses_g_2056_28_july_23.jpg" alt="Frame">
+            <div class="card-info">
+                <h3>Golden Aviator</h3>
+                <p>Size: Large • Premium Metal</p>
+                <div class="price">₹3,200</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
